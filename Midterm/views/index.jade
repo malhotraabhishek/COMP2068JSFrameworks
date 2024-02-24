@@ -1,0 +1,53 @@
+// index.jade
+extends layout
+
+block content
+
+  h1= title
+
+  // Home Content
+  block home
+    .jumbotron
+      h1(class='display-4') Abhishek Abhishek
+      p(class='lead') Abhishek Abhishek
+
+  // Student Block
+  block student
+    h2 Student
+    p Im a programmer student.
+
+  // About Block
+  block about
+    h2 About
+    p My name is Abhishek Abhishek and I'm a programmer student from Georgian College!
+
+  form(action='/contacts/add', method='post', class='container mt-4')
+    .form-group
+      label(for='firstName') First Name:
+      input(type='text', name='firstName', required=true, class='form-control')
+
+    .form-group
+      label(for='lastName') Last Name:
+      input(type='text', name='lastName', required=true, class='form-control')
+
+    .form-group
+      label(for='studentNumber') Student Number:
+      input(type='text', name='studentNumber', required=true, class='form-control')
+
+    .form-group
+      label(for='email') Email:
+      input(type='email', name='email', required=true, class='form-control')
+
+    button(type='submit', class='btn btn-success mt-3') Add Contact
+
+  ul(class='list-group mt-4')
+    if contacts && contacts.length > 0
+      each contact in contacts
+        li(class='list-group-item')
+          h3= contact.firstName + ' ' + contact.lastName
+          p= 'Student Number: ' + contact.studentNumber
+          p= 'Email: ' + contact.email
+          a(href='/contacts/edit/' + contact._id, class='btn btn-primary mr-2') Edit
+          a(href='/contacts/delete/' + contact._id, class='btn btn-danger') Delete
+    else
+      li(class='list-group-item') No contacts available.
