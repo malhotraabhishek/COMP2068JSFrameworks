@@ -1,0 +1,95 @@
+doctype html
+html(lang='en')
+  head
+    title= title
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+    style.
+      body {
+        padding-top: 56px;
+        background-color: #333333;
+      }
+      .jumbotron {
+        background-color: #333333;
+         color: #fff;
+      }
+      .navbar {
+        background-color: transparent !important;
+      }
+      .container {
+        margin-top: 40px;
+         color: #333333;
+         background-color: #FFFF;
+         
+      }
+      footer {
+        background-color: #2c2c2c;
+        color: #fff;
+      }
+
+  body
+    nav.navbar.navbar-expand-lg.navbar-dark.fixed-top
+      a.navbar-brand(href='#') MIDTERM EXAM
+
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarResponsive')
+        span.navbar-toggler-icon
+
+      #navbarResponsive.collapse.navbar-collapse
+        ul.navbar-nav.ml-auto
+          li.nav-item
+            a.nav-link(href='#home') Home
+          li.nav-item
+            a.nav-link(href='#student') Student
+          li.nav-item
+            a.nav-link(href='#about') About
+          li.nav-item
+            a.nav-link(href='#contact') Contact
+
+    .container.mt-5
+      block content
+        .jumbotron.bg-dark.text-white
+          h1(class='display-4') Student Name
+          p(class='lead') My name is Abhishek Abhishek
+
+        // Home Content
+        block home
+          div(class='bg-primary text-white min-vh-40 w-100')
+            // Content goes here
+
+        // Student Block
+        block student
+          div(class='bg-success text-white min-vh-40 w-100')
+            h2 Student
+            p My name is Abhishek Abhishek.
+
+        // About Block
+        block about
+          div(class='bg-danger text-white min-vh-40 w-100')
+            h2 About
+            p I'm a programmer student.
+
+        // Contact Form
+        if title === 'Contacts'
+          div(class='bg-warning text-dark min-vh-40 w-100')
+            form(action='/contacts/add', method='post', class='mt-4')
+              .form-group
+                label(for='firstName') First Name:
+                input(type='text', name='firstName', required=true, class='form-control')
+
+              .form-group
+                label(for='lastName') Last Name:
+                input(type='text', name='lastName', required=true, class='form-control')
+
+              .form-group
+                label(for='studentNumber') Student Number:
+                input(type='text', name='studentNumber', required=true, class='form-control')
+
+              .form-group
+                label(for='email') Email:
+                input(type='email', name='email', required=true, class='form-control')
+
+              button(type='submit', class='btn btn-success mt-3') Add Contact
+
+      // Footer
+      block footer
+        footer(class='footer mt-auto py-3 text-center')
+          | Student Name: Abhishek Abhishek | Student ID: 200533010
