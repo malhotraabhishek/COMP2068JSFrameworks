@@ -1,0 +1,71 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #f4f4f4; /* Light grey background */
+  color: #333; /* Dark grey text */
+}
+
+a {
+  color: #00B7FF;
+  text-decoration: none; /* Removes underline from links */
+}
+
+a:hover {
+  text-decoration: underline; /* Adds underline on hover */
+  color: #005580; /* Darker blue for hover state */
+}
+
+header {
+  background-color: #333; /* Dark grey background */
+  color: #fff; /* White text */
+  padding: 20px 0; /* Padding above and below */
+  text-align: center; /* Centers the content */
+}
+
+nav ul {
+  list-style: none; /* Removes bullet points */
+  padding: 0; /* Removes default padding */
+}
+
+nav ul li {
+  display: inline; /* Displays list items in a row */
+  margin-right: 20px; /* Adds spacing between menu items */
+}
+
+nav ul li a {
+  color: #fff; /* White text for links */
+  font-weight: bold; /* Makes font bold */
+}
+
+.container {
+  background-color: #fff; /* White background for content */
+  padding: 20px; /* Padding inside the container */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+}
+
+h1, h2 {
+  color: #333; /* Dark grey for headings */
+}
+
+/* Responsive typography */
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+p {
+  line-height: 1.6; /* Spacing between lines */
+  margin-bottom: 20px; /* Spacing after paragraphs */
+}
+.image-fixed-size {
+  width: 100%; /* Adjusts the width of the image to fit the container */
+  max-width: 400px; /* Maximum width of the image */
+  height: 250px; /* Fixed height of the image */
+  object-fit: cover; /* Ensures the aspect ratio is maintained without stretching the image */
+  display: block; /* Displays the image as a block-level element */
+  margin: 0 auto; /* Centers the image within the container */
+}
